@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react';
+import '../progressBar/progressBar.css';
 
 const ProgressBar = (props)=>{
 
@@ -46,10 +47,6 @@ const ProgressBar = (props)=>{
                 strokeDasharray={circumference}
                 strokeDashoffset={offset}
                 />
-
-                <svg viewBox="0 0 10 10" x="200" width="100">
-                    <circle cx="5" cy="5" r="4" />
-                </svg>
             </svg>
         </div>
     );
