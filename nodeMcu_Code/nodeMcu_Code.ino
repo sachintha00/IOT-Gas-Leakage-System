@@ -31,6 +31,16 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  MQ2_SENSOR_Value = map(analogRead(MQ2_SENSOR), 0, 30, 0, 100);
 
+  if (MQ2_SENSOR_Value > 20 ) {
+    Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
+    //    digitalWrite(GREEN_LED, LOW);
+    //    digitalWrite(RED_LED, HIGH);
+  }
+  else {
+    Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
+    //    digitalWrite(GREEN_LED, HIGH);
+    //    digitalWrite(RED_LED, LOW);
+  }
 }
