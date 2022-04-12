@@ -7,9 +7,26 @@
 #define WIFI_SSID "Sachintha"
 #define WIFI_PASSWORD "sachintha"
 
+#define MQ2_SENSOR    A0
+
+int MQ2_SENSOR_Value = 0;
 
 void setup() {
-  // put your setup code here, to run once:
+  Serial.begin(9600);
+
+  pinMode(MQ2_SENSOR, INPUT);
+  // connect to wifi.
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+  Serial.print("connecting");
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+  Serial.println();
+  Serial.print("connected: ");
+  Serial.println(WiFi.localIP());
+
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
 
 }
 
