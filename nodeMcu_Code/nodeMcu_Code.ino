@@ -31,7 +31,7 @@ void setup() {
 }
 
 void loop() {
-  MQ2_SENSOR_Value = map(analogRead(MQ2_SENSOR), 0, 1024, 0, 100);
+  MQ2_SENSOR_Value = analogRead(MQ2_SENSOR);
 
   if (MQ2_SENSOR_Value > 20 ) {
     Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
