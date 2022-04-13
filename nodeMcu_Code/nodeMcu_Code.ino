@@ -31,15 +31,13 @@ void setup() {
 }
 
 void loop() {
-  MQ2_SENSOR_Value = analogRead(MQ2_SENSOR);
-
+  MQ2_SENSOR_Value = map(analogRead(MQ2_SENSOR),0,150,0,100);
+  Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
   if (MQ2_SENSOR_Value > 20 ) {
-    Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
     //    digitalWrite(GREEN_LED, LOW);
     //    digitalWrite(RED_LED, HIGH);
   }
   else {
-    Firebase.setInt("IOTcourseWork/gasValue", MQ2_SENSOR_Value);
     //    digitalWrite(GREEN_LED, HIGH);
     //    digitalWrite(RED_LED, LOW);
   }
