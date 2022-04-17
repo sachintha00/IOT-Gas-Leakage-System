@@ -33,7 +33,7 @@ const App = ()=> {
   return (
     <div className="App">
       <h1>ALERT FOR GAS LEAKAGE</h1>
-      <p></p>
+      <p>This is the smart way to protect you and your loves ones.</p>
       <header className="App-header">
         
       <ProgressBar {...state} />
