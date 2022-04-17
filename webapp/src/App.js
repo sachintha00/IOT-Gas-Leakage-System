@@ -32,8 +32,8 @@ const App = ()=> {
 
   return (
     <div className="App">
-      <h1>GAS LEAKAGE</h1>
-      <p>sachintha madhawa deniyegedara</p>
+      <h1>ALERT FOR GAS LEAKAGE</h1>
+      <p></p>
       <header className="App-header">
         
       <ProgressBar {...state} />
